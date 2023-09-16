@@ -1,0 +1,71 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Contactos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button expand="block" (click)="agregar()">
+    <ion-icon name="add-outline"></ion-icon>
+    &nbsp; Agregar
+  </ion-button>
+  <ion-col size="6" sizeMd="6" sizeXs="12" *ngFor="let contacto of contactos; let i = index;">
+    <ion-card>
+      <img alt="Silhouette of mountains" src="{{ contacto.foto }}" />
+      <ion-card-header>
+        <ion-card-title *ngIf="edicionId !== contacto.id">{{ contacto.nombres + ' ' + contacto.apellidos }}</ion-card-title>
+        <ion-item *ngIf="edicionId === contacto.id">
+          <ion-input
+            type="text"
+            fill="solid"
+            label="Nombres"
+            labelPlacement="floating"
+            [(ngModel)]="nombres"
+          ></ion-input>
+        </ion-item><br>
+        <ion-item *ngIf="edicionId === contacto.id">
+          <ion-input
+            type="text"
+            fill="solid"
+            label="Apellidos"
+            labelPlacement="floating"
+            [(ngModel)]="apellidos"
+          ></ion-input>
+        </ion-item>
+      </ion-card-header>
+
+      <ion-card-content *ngIf="edicionId !== contacto.id">
+        <b>Celular: </b> {{ contacto.celular }} <br>
+        <b>Email: </b> {{ contacto.email }}
+      </ion-card-content>
+
+      <ion-card-content>
+        <ion-item *ngIf="edicionId === contacto.id">
+          <ion-input
+            type="number"
+            fill="solid"
+            label="Celular"
+            labelPlacement="floating"
+            [(ngModel)]="celular"
+          ></ion-input>
+        </ion-item><br>
+        <ion-item *ngIf="edicionId === contacto.id">
+          <ion-input
+            type="email"
+            fill="solid"
+            label="Email"
+            labelPlacement="floating"
+            [(ngModel)]="email"
+          ></ion-input>
+        </ion-item>
+      </ion-card-content>
+
+      <ion-button *ngIf="edicionId === contacto.id" color="secondary" (click)="guardar(i)"><ion-icon name="save-outline"></ion-icon> &nbsp; Guardar</ion-button>
+      <ion-button *ngIf="edicionId !== contacto.id" color="secondary" (click)="editar(contacto.id)"><ion-icon name="pencil-outline"></ion-icon> &nbsp; Editar</ion-button>
+      <ion-button color="secondary" (click)="eliminar(i)"><ion-icon name="trash-outline"></ion-icon>&nbsp; Eliminar</ion-button>
+    </ion-card>
+  </ion-col>
+</ion-content>

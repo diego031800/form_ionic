@@ -1,0 +1,40 @@
+{
+  "data" : [
+    {
+      "id": "1",
+      "nombres": "Jose Diego",
+      "apellidos": "Azabache Santos",
+      "celular": "959428071",
+      "email": "aspirojose@gmail.com",
+      "foto": "assets/images/perfil1.jpg",
+      "estado": true
+    },
+    {
+      "id": "2",
+      "nombres": "Pedro Juan",
+      "apellidos": "Ramirez Sanchez",
+      "celular": "908432743",
+      "email": "juanramirez@gmail.com",
+      "foto": "assets/images/perfil3.jpg",
+      "estado": true
+    },
+    {
+      "id": "3",
+      "nombres": "Toribio Anderson",
+      "apellidos": "Paniagua Carajon",
+      "celular": "954783002",
+      "email": "tapc@gmail.com",
+      "foto": "assets/images/perfil2.png",
+      "estado": true
+    },
+    {
+      "id": "4",
+      "nombres": "Marcos",
+      "apellidos": "Rodriguez Vasquez",
+      "celular": "908373981",
+      "email": "marcosrv@gmail.com",
+      "foto": "assets/images/perfil1.jpg",
+      "estado": true
+    }
+  ]
+}
